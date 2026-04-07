@@ -1,13 +1,6 @@
 {
-  "keys": {
-    "Raaz": {
-      "exp": 1893456000,
-      "rng": 1234567890
-    },
-    "ANOTHER_KEY": {
-      "exp": 1924992000,
-      "rng": 987654321,
-      "sandipop": "optional_enc_string"
-    }
-  }
+  "token": "abc",
+  "Enc": "xyz",
+  "EXP": 1893456000,
+  "rng": 1234567890
 }
