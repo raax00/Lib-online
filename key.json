@@ -1,17 +1,13 @@
 {
-  "status": true,
   "keys": {
-    "VIP12345": {
-      "EXP": "2026-12-31",
-      "Enc": "VIP_SANDIPOP_DATA",
-      "rng": 1715000000,
-      "active": true
+    "Raaz": {
+      "exp": 1893456000,
+      "rng": 1234567890
     },
-    "TRIAL99": {
-      "EXP": "2026-05-30",
-      "Enc": "TRIAL_SANDIPOP",
-      "rng": 1715000000,
-      "active": false
+    "ANOTHER_KEY": {
+      "exp": 1924992000,
+      "rng": 987654321,
+      "sandipop": "optional_enc_string"
     }
   }
 }
