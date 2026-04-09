@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView, Text, StyleSheet } from 'react-native';
 
-const App = () => {
+export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Hello APK Build 🚀</Text>
+      <Text style={styles.text}>Hello from GitHub APK 🚀</Text>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -19,5 +19,3 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
-
-export default App;
