@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#000000" />
+  <title>POP Store — BGMI Popularity Store</title>
+  <meta name="description" content="Boost your BGMI Popularity fast. 50K starting at ₹50." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ff2e63'/%3E%3Ctext x='50%25' y='58%25' text-anchor='middle' font-family='Helvetica,Arial' font-size='36' font-weight='900' fill='white'%3EP%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">P</div>
+      <div class="brand-text">
+        <h1>POP Store</h1>
+        <span class="tag">BGMI Popularity Boost</span>
+      </div>
+    </div>
+    <button class="help-btn" id="helpBtn" aria-label="How it works">?</button>
+  </header>
+
+  <main class="app-main">
+    <!-- STEP 1: Packages -->
+    <section class="view view-active" id="view-packages" data-step="1">
+      <div class="hero">
+        <span class="pill">Live Server • 24×7</span>
+        <h2>Get Trending <em>Fast</em>.</h2>
+        <p class="sub">Instant BGMI popularity delivery. Pay via UPI. Get boosted within minutes.</p>
+      </div>
+
+      <div class="section-title">
+        <h3>Choose a pack</h3>
+        <span class="badge-sale">FLASH SALE</span>
+      </div>
+
+      <div class="packs" id="packs"></div>
+
+      <div class="trust">
+        <div class="trust-item"><span class="ti-ico">⚡</span><span>Fast Delivery</span></div>
+        <div class="trust-item"><span class="ti-ico">🔒</span><span>Safe & Private</span></div>
+        <div class="trust-item"><span class="ti-ico">💬</span><span>24×7 Support</span></div>
+      </div>
+    </section>
+
+    <!-- STEP 2: Details -->
+    <section class="view" id="view-details" data-step="2">
+      <button class="back" data-back="packages" aria-label="Back">←</button>
+      <h2 class="view-title">Your Details</h2>
+      <p class="view-sub" id="detailsSub">Enter your BGMI details carefully.</p>
+
+      <form class="card form" id="detailsForm" novalidate>
+        <label class="field">
+          <span>BGMI Character UID</span>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" name="uid" id="uid" placeholder="5123456789" autocomplete="off" required maxlength="12" />
+          <small class="hint">Find in Profile → copy ID</small>
+        </label>
+
+        <label class="field">
+          <span>In-Game Name (IGN)</span>
+          <input type="text" name="ign" id="ign" placeholder="e.g. xSNIPERx" required maxlength="24" />
+        </label>
+
+        <label class="field">
+          <span>WhatsApp Number</span>
+          <input type="tel" inputmode="numeric" pattern="[0-9]*" name="phone" id="phone" placeholder="10-digit number" required maxlength="10" />
+          <small class="hint">For delivery updates</small>
+        </label>
+
+        <div class="summary-row" id="summaryPack"></div>
+
+        <button type="submit" class="cta">Continue to Payment →</button>
+      </form>
+    </section>
+
+    <!-- STEP 3: Payment -->
+    <section class="view" id="view-payment" data-step="3">
+      <button class="back" data-back="details" aria-label="Back">←</button>
+      <h2 class="view-title">Pay via UPI</h2>
+      <p class="view-sub">Pay the exact amount to receive delivery.</p>
+
+      <div class="card pay-card">
+        <div class="pay-amount">
+          <span>Amount to pay</span>
+          <strong id="payAmount">₹0</strong>
+        </div>
+
+        <div class="upi-row">
+          <div class="upi-label">UPI ID</div>
+          <div class="upi-id">
+            <code id="upiId">8406962570@ybl</code>
+            <button class="copy-btn" id="copyUpi" aria-label="Copy UPI ID">Copy</button>
+          </div>
+        </div>
+
+        <a class="upi-deeplink" id="upiLink" href="#">Open UPI App to Pay</a>
+
+        <div class="pay-hint">
+          <span>1.</span><p>Send the exact amount to the UPI ID above.</p>
+          <span>2.</span><p>After payment, copy the <b>UTR / Transaction ID</b> from your UPI app.</p>
+          <span>3.</span><p>Paste it below and continue.</p>
+        </div>
+      </div>
+
+      <form class="card form" id="utrForm" novalidate>
+        <label class="field">
+          <span>UTR / Transaction ID</span>
+          <input type="text" name="utr" id="utr" placeholder="e.g. 412345678901" required minlength="8" maxlength="24" autocomplete="off" />
+          <small class="hint">12-digit reference from your UPI app</small>
+        </label>
+        <button type="submit" class="cta">Submit Payment</button>
+      </form>
+    </section>
+
+    <!-- STEP 4: Request -->
+    <section class="view" id="view-request" data-step="4">
+      <div class="success">
+        <div class="check-ring">
+          <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="currentColor" stroke-width="3"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M14 27 l8 8 l16 -18"/></svg>
+        </div>
+        <h2>Almost done!</h2>
+        <p>Tap the button below. Your Gmail will open with all details auto-filled. Just hit <b>Send</b> — we'll process instantly.</p>
+
+        <div class="card order-summary" id="orderSummary"></div>
+
+        <button class="cta cta-lg" id="requestBtn">📩 Send Request via Gmail</button>
+        <button class="ghost" id="copyReqBtn">Copy details instead</button>
+        <p class="small-note">Delivery email goes to <b>rajaansr77@gmail.com</b></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>© POP Store • For entertainment use only. Not affiliated with Krafton / BGMI.</p>
+  </footer>
+
+  <!-- Help sheet -->
+  <div class="sheet" id="helpSheet" aria-hidden="true">
+    <div class="sheet-backdrop" data-close-sheet></div>
+    <div class="sheet-card">
+      <div class="sheet-handle"></div>
+      <h3>How it works</h3>
+      <ol>
+        <li>Pick a popularity pack.</li>
+        <li>Enter your BGMI UID & IGN.</li>
+        <li>Pay via UPI to <b>8406962570@ybl</b>.</li>
+        <li>Paste the UTR and submit.</li>
+        <li>Tap "Send Request" — your details auto-fill in Gmail. Hit send.</li>
+        <li>We boost your popularity — usually within minutes.</li>
+      </ol>
+      <button class="cta" data-close-sheet>Got it</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
